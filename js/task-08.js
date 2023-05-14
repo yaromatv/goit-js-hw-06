@@ -22,7 +22,7 @@
 const formEl = document.querySelector(".login-form");
 
 formEl.addEventListener("submit", onSubmit);
-const loginData = [];
+const loginData = {};
 
 function onSubmit(event) {
     event.preventDefault();
@@ -35,7 +35,9 @@ function onSubmit(event) {
     }
 
     // const alternLoginData = new FormData(event.currentTarget);
-    loginData.push({ email: email.value, password: password.value });
+
+    loginData.email = email.value;
+    loginData.password = password.value;
 
     console.log(loginData);
     event.currentTarget.reset();
